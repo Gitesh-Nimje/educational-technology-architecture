@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> QUIZ SECTION </title>
+    <title>QUIZ SECTION</title>
 
     <!-- Internal CSS -->
     <style>
@@ -21,6 +21,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         header h1 {
@@ -36,6 +37,25 @@
 
         nav a:hover {
             text-decoration: underline;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #c0392b;
         }
 
         /* Sections */
@@ -92,9 +112,10 @@
 
     <!-- Navigation Bar -->
     <header>
+        <a href="home.html" class="back-button">← Back</a>
         <h1>Scholars</h1>
         <nav>
-            <a href="home.HTML">Home</a>
+            <a href="home.html">Home</a>
             <a href="#courses">Courses</a>
             <a href="#quiz">Quiz</a>
             <a href="contactus.html">Contact</a>
@@ -109,7 +130,7 @@
 
     <!-- Courses Section -->
     <section id="courses" class="light">
-        <h2>Our Other  Courses</h2>
+        <h2>Our Other Courses</h2>
         <div class="cards">
             <div class="card">HTML & CSS</div>
             <div class="card">JavaScript</div>
@@ -123,7 +144,6 @@
         <p>Attempt the quiz using the Google Form below.</p>
 
         <div class="form-container">
-            <!-- Replace YOUR_GOOGLE_FORM_LINK -->
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSchRLXZGoeoAs95sZiiXokvqCBbDL6H3I7RFZo2gRgiK1KY1w/viewform?usp=dialog"
                 width="100%" 
@@ -135,8 +155,8 @@
     <!-- Contact Section -->
     <section id="contact" class="light">
         <h2>Contact Us</h2>
-        <a href="contactus.html"
         <p>Email: Scholars@edulearn.com</p>
+        <a href="contactus.html">Go to Contact Page</a>
     </section>
 
     <!-- Footer -->
@@ -146,3 +166,4 @@
 
 </body>
 </html>
+
