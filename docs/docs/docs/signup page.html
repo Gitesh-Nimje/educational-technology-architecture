@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Signup</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(0,0,0,0.25);
+            color: white;
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .gender {
+            margin-top: 5px;
+        }
+
+        input[type="file"] {
+            border: none;
+            margin-top: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #16305a;
+        }
+
+        /* ===== QUOTES ===== */
+        .quotes {
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .quote-box {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0f1f3d;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Bright Future Academy</h1>
+    <p>"Education is the most powerful weapon which you can use to change the world."</p>
+</header>
+
+<div class="container">
+    <h2>Student Signup</h2>
+
+    <!-- FORM -->
+    <form onsubmit="goHome(event)">
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+
+        <label>Gender</label>
+        <div class="gender">
+            <input type="radio" name="gender" required> Male
+            <input type="radio" name="gender"> Female
+        </div>
+
+        <label>Age</label>
+        <select required>
+            <option value="">Select Age</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+        </select>
+
+        <label>Class</label>
+        <select required>
+            <option value="">Select Class</option>
+            <option>8TH</option>
+            <option>9TH</option>
+            <option>10TH</option>
+            <option>11TH</option>
+            <option>12TH</option>
+        </select>
+
+        <label>Upload Photo</label>
+        <input type="file" accept=".jpg,.png">
+
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+</div>
+
+<div class="quotes">
+    <div class="quote-box">📘 "Learning never exhausts the mind." – Leonardo da Vinci</div>
+    <div class="quote-box">🎓 "The future belongs to those who prepare for it today." – Malcolm X</div>
+    <div class="quote-box">📚 "Success is the sum of small efforts repeated day after day."</div>
+</div>
+
+<footer>
+    <p>Need help? <a href="contactus.html   ">Contact Us</a></p>
+    <p>© 2026 Scholars@edulearn | Learn • Grow • Succeed</p>
+</footer>
+
+<!-- REDIRECT SCRIPT -->
+<script>
+    function goHome(event) {
+        event.preventDefault(); // stop form submission
+        window.location.href = "home.html";
+    }
+</script>
+
+</body>
+</html>
