@@ -68,6 +68,27 @@ footer {
     margin-top: 20px;
 }
 
+/* ===== BACK BUTTON ===== */
+#back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    color: #1a73e8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#back-button:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+
 /* ===== CHATBOT BUTTON ===== */
 #chatbot-launcher {
     position: fixed;
@@ -159,6 +180,9 @@ footer {
 
 <body>
 
+<!-- ===== BACK BUTTON ===== -->
+<a href="home.html" id="back-button">← Back</a>
+
 <header>
     <h1>📚 Scholars Learning Hub</h1>
     <p>Learn • Explore • Succeed</p>
@@ -233,7 +257,7 @@ footer {
 </div>
 
 <script>
-const API_KEY = "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"; // 🔐 Add your OpenAI API key
+const API_KEY = "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"; // 🔐 Add your OpenAI API key
 
 const launcher = document.getElementById("chatbot-launcher");
 const chatbox = document.getElementById("chatbox");
@@ -284,4 +308,6 @@ document.getElementById("send-btn").onclick = sendMessage;
 
 </body>
 </html>
+
+
 
