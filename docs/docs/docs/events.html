@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Events</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(120deg, #f6d365, #fda085);
+    }
+
+    header {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        position: relative; /* needed for back button */
+    }
+
+    header h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    /* Back Button */
+    .back-button {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .back-button:hover {
+        background-color: #c0392b;
+    }
+
+    nav {
+        background: #111827;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    nav a {
+        color: #f9fafb;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 14px;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        background: #22c55e;
+        color: #111827;
+    }
+
+    section {
+        background: white;
+        margin: 30px auto;
+        padding: 40px;
+        max-width: 1100px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+        color: #4f46e5;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+    p {
+        color: #374151;
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    #about {
+        border-left: 10px solid #22c55e;
+    }
+
+    #events {
+        border-left: 10px solid #f97316;
+    }
+
+    #contact {
+        border-left: 10px solid #ec4899;
+    }
+
+    iframe {
+        width: 100%;
+        height: 600px;
+        border-radius: 12px;
+        border: none;
+        margin-top: 10px;
+    }
+
+    footer {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: #e5e7eb;
+        text-align: center;
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    footer span {
+        color: #22c55e;
+        font-weight: bold;
+    }
+
+    /* Mobile Friendly */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 30px;
+        }
+
+        nav {
+            flex-wrap: wrap;
+        }
+
+        section {
+            margin: 20px;
+            padding: 25px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="home.html" class="back-button">← Back</a>
+    <h1>📚 Scholars Academy</h1>
+    <p>Learn • Explore • Achieve</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="contactus.html">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>🎓 About Us</h2>
+    <p>
+        ScholarsEduLearn inspires students through interactive learning,
+        modern teaching, and exciting academic events.
+    </p>
+</section>
+
+<section id="events">
+    <h2>📅 Upcoming Events</h2>
+    <iframe
+        src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=UTC">
+    </iframe>
+</section>
+
+<section id="contact">
+    <h2>📞 Contact Us</h2>
+    <p>
+        Email: Scholars@brightminds.edu <br>
+        Phone: +1 234 567 8900
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 <span>ScholarsEduLearn </span>. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
