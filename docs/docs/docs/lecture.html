@@ -1,79 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> Scholars Learning Hub</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Scholars Learning Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            text-align: center;
-        }
+<style>
+/* ===== MAIN WEBSITE ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    text-align: center;
+}
 
-        header {
-            background-color: #1a73e8;
-            color: white;
-            padding: 20px;
-        }
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 20px;
+}
 
-        nav {
-            background-color: #ffffff;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+nav {
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #1a73e8;
-            font-weight: bold;
-        }
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: bold;
+}
 
-        .container {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-        .btn {
-            display: inline-block;
-            background-color: #1a73e8;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            margin-top: 10px;
-        }
+.btn {
+    display: inline-block;
+    background-color: #1a73e8;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
 
-        .btn:hover {
-            background-color: #155ab6;
-        }
+.btn:hover {
+    background-color: #155ab6;
+}
 
-        ul, ol {
-            list-style-position: inside;
-            padding: 0;
-        }
+footer {
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
 
-        footer {
-            background-color: #1a73e8;
-            color: white;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
+/* ===== CHATBOT BUTTON ===== */
+#chatbot-launcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+#chatbot-launcher span {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2563eb;
+}
+
+#chatbot-launcher img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #2563eb;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ===== CHATBOX ===== */
+#chatbox {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+}
+
+#chat-header {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+}
+
+#messages {
+    height: 260px;
+    overflow-y: auto;
+    padding: 10px;
+    text-align: left;
+}
+
+.message {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.user {
+    text-align: right;
+    color: #2563eb;
+}
+
+.bot {
+    color: #111;
+}
+
+#input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+#input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+#send-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -94,19 +177,13 @@
     <div class="card" id="classroom">
         <h2>🎓 Google Classroom</h2>
         <p>Access your assignments, notes, and announcements.</p>
-        <a class="btn" href="https://classroom.google.com/u/0/h" target="_blank">
-            Open Google Classroom
-        </a>
-        <p><strong>Tip:</strong> Use your school Gmail account</p>
+        <a class="btn" href="https://classroom.google.com/u/0/h" target="_blank">Open Google Classroom</a>
     </div>
 
     <div class="card" id="meet">
         <h2>🎥 Google Meet</h2>
         <p>Join your live online classes.</p>
-        <a class="btn" href="https://meet.google.com/landing" target="_blank">
-            Join Google Meet
-        </a>
-
+        <a class="btn" href="https://meet.google.com/landing" target="_blank">Join Google Meet</a>
         <ul>
             <li>Mute your microphone 🎙️</li>
             <li>Be on time ⏰</li>
@@ -139,5 +216,72 @@
     <p>© 2026 ScholarsEduLearn | Happy Learning 😊</p>
 </footer>
 
+<!-- ===== CHATBOT BUTTON WITH IMAGE AND TEXT ===== -->
+<div id="chatbot-launcher">
+    <span>AI Chatbot</span>
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Robot">
+</div>
+
+<!-- ===== CHATBOX ===== -->
+<div id="chatbox">
+    <div id="chat-header">EduBot 📘</div>
+    <div id="messages"></div>
+    <div id="input-area">
+        <input id="input" placeholder="Ask a question..." />
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<script>
+const API_KEY = "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"; // 🔐 Add your OpenAI API key
+
+const launcher = document.getElementById("chatbot-launcher");
+const chatbox = document.getElementById("chatbox");
+
+launcher.onclick = () => {
+    chatbox.style.display = chatbox.style.display === "flex" ? "none" : "flex";
+};
+
+function addMessage(sender, text) {
+    const div = document.createElement("div");
+    div.className = "message " + sender;
+    div.innerText = text;
+    document.getElementById("messages").appendChild(div);
+}
+
+async function sendMessage() {
+    const input = document.getElementById("input");
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    addMessage("user", msg);
+    input.value = "";
+
+    try {
+        const res = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + API_KEY
+            },
+            body: JSON.stringify({
+                model: "gpt-4o-mini",
+                messages: [
+                    { role: "system", content: "You are an educational tutor. Explain clearly with examples." },
+                    { role: "user", content: msg }
+                ]
+            })
+        });
+        const data = await res.json();
+        addMessage("bot", data.choices[0].message.content);
+    } catch {
+        addMessage("bot", "⚠️ Unable to connect to AI.");
+    }
+}
+
+document.getElementById("send-btn").onclick = sendMessage;
+</script>
+
 </body>
 </html>
+
