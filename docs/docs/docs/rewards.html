@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Progress Dashboard</title>
+
+<style>
+  body {
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    padding: 20px;
+  }
+
+  /* BACK BUTTON */
+  .back-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #ff7043;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+
+  .dashboard {
+    max-width: 750px;
+    margin: 50px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  h1 {
+    text-align: center;
+    color: #3f51b5;
+  }
+
+  h3 {
+    color: #ff5722;
+  }
+
+  .progress-bar {
+    background: #e0e0e0;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+
+  .progress {
+    height: 22px;
+    background: linear-gradient(90deg, #4caf50, #8bc34a);
+    width: 0%;
+    transition: 0.5s;
+  }
+
+  .points {
+    text-align: center;
+    font-size: 20px;
+    margin: 15px 0;
+    color: #2e7d32;
+  }
+
+  .task, .book {
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+  }
+
+  .task {
+    background: #fff3e0;
+    border-left: 6px solid #ff9800;
+  }
+
+  .task.completed {
+    background: #e8f5e9;
+    border-left-color: #4caf50;
+  }
+
+  .book {
+    background: #f3e5f5;
+    border-left: 6px solid #9c27b0;
+  }
+
+  .book.unlocked {
+    background: #e8f5e9;
+    border-left-color: #4caf50;
+  }
+
+  button {
+    background: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  button:disabled {
+    background: gray;
+  }
+
+  a {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- BACK BUTTON -->
+<!-- Change the path below if you want the back button to go to a different page -->
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<div class="dashboard">
+
+<h1>🎓 My Rewards Dashboard</h1>
+
+<div class="progress-bar">
+  <div class="progress" id="progress"></div>
+</div>
+
+<div class="points">
+  ⭐ Points: <span id="points">0</span>
+</div>
+
+<h3>✅ Learning Tasks</h3>
+
+<div class="task" id="task1">
+  📺 Watch Lesson Video (+10)<br>
+  <button onclick="completeTask(1,10)">Done</button>
+</div>
+
+<div class="task" id="task2">
+  📝 Pass Quiz (+20)<br>
+  <button onclick="completeTask(2,20)">Done</button>
+</div>
+
+<div class="task" id="task3">
+  📤 Submit Assignment (+20)<br>
+  <button onclick="completeTask(3,20)">Done</button>
+</div>
+
+<h3>📚 Reward Books</h3>
+
+<div class="book" id="book1">📕 Story Book (50 Points) 🔒</div>
+<div class="book" id="book2">📗 Science Book (100 Points) 🔒</div>
+<div class="book" id="book3">📘 Motivation Book (150 Points) 🔒</div>
+
+</div>
+
+<script>
+let points = 0;
+
+// BACK BUTTON FUNCTION
+function goBack() {
+  // CHANGE THIS PATH to the page you want
+  window.location.href = "home.html"; 
+}
+
+// TASK COMPLETION
+function completeTask(task, value) {
+  points += value;
+  document.getElementById("points").innerText = points;
+
+  // Mark task as visually completed
+  let taskDiv = document.getElementById("task" + task);
+  taskDiv.classList.add("completed");
+
+  // TASKS CAN BE REPEATED FOR EXTRA POINTS
+  // If you want one-time completion only, uncomment the next line:
+  // taskDiv.querySelector("button").disabled = true;
+
+  updateProgress();
+  unlockBooks();
+}
+
+// PROGRESS BAR UPDATE
+function updateProgress() {
+  // cap visually at 100% even if points go higher
+  let percent = Math.min(points, 150) / 1.5;
+  document.getElementById("progress").style.width = percent + "%";
+}
+
+// UNLOCK BOOKS
+function unlockBooks() {
+
+  if (points >= 50) {
+    document.getElementById("book1").classList.add("unlocked");
+    document.getElementById("book1").innerHTML =
+      '📕 Story Book 🔓 <a href="story.pdf" target="_blank">Read PDF</a>';
+  }
+
+  if (points >= 100) {
+    document.getElementById("book2").classList.add("unlocked");
+    document.getElementById("book2").innerHTML =
+      '📗 Science Book 🔓 <a href="science.pdf" target="_blank">Read PDF</a>';
+  }
+
+  if (points >= 150) {
+    document.getElementById("book3").classList.add("unlocked");
+    document.getElementById("book3").innerHTML =
+      '📘 Motivation Book 🔓 <a href="motivation.pdf" target="_blank">Read PDF</a>';
+  }
+}
+</script>
+
+</body>
+</html>
+
