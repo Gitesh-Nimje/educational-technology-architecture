@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scholars</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background-color: aqua;
+            height: 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .profile {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            text-align: center;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile button {
+            margin-top: 5px;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #0077cc;
+            color: white;
+        }
+        .profile button:hover {
+            background-color: #005fa3;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: red;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content */
+        .main {
+            padding: 40px 20px;
+        }
+
+        .charts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            background-color: white;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Courses Section */
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .course-card {
+            width: 250px;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Events Section */
+        .events {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .events h3 {
+            margin-top: 0;
+        }
+
+        .events ul {
+            list-style: none;
+            padding: 0;
+        }
+        .events ul li {
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Scholars</h1>
+    <div class="profile">
+        <img src="https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=" alt="Profile">
+        <a href="signup page.html"><button>Sign In</button></a>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="lecture.html">Classroom</a>
+    <a href="lecture.html">Learning</a>
+    <a href="quizes.html"> Quizes</a>
+    <a href="events.html">Events</a>
+</nav>
+
+<!-- Main Content -->
+<div class="main">
+
+    <!-- Hero Section -->
+    <div style="background:#d0f0fd; padding:30px; border-radius:8px; margin-bottom:50px;">
+        <h2>Welcome Back, Student!</h2>
+        <p>Track your progress, explore new courses, and stay engaged with daily learning.</p>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+        <div>
+            <div class="box">
+                <canvas id="performanceChart" width="280" height="280"></canvas>
+            </div>
+            <h2 style="text-align:center;">Performance</h2>
+        </div>
+
+        <div>
+            <div class="box">
+                <canvas id="interactionChart" width="280" height="280"></canvas>
+            </div>
+            <h2 style="text-align:center;">Daily Interaction</h2>
+        </div>
+    </div>
+
+    <!-- Courses -->
+    <h2 style="text-align:center;">Available Courses</h2>
+    <div class="courses">
+        <div class="course-card" style="background:#ff9999;color:white;">Mathematics</div>
+        <div class="course-card" style="background:#66b3ff;color:white;">Science</div>
+        <div class="course-card" style="background:#99ff99;">English</div>
+        <div class="course-card" style="background:#ffcc66;">History</div>
+        <div class="course-card" style="background:#cc99ff;color:white;">Art</div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="events">
+        <h3>Upcoming Events</h3>
+        <ul>
+            <li>Math Quiz - Monday, 10 AM</li>
+            <li>Science Project Submission - Wednesday</li>
+            <li>English Essay Deadline - Friday</li>
+            <li>History Webinar - Saturday, 2 PM</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Scholars@edulearn All rights reserved.</p>
+    <p>
+        <a href="contactus.html">Contact</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Support</a>
+    </p>
+</footer>
+
+<!-- Charts Script -->
+<script>
+    new Chart(document.getElementById('performanceChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Math','Science','English','History','PE'],
+            datasets: [{
+                data: [85,75,90,60,80],
+                backgroundColor: ['#4dc9f6','#f67019','#f53794','#537bc4','#acc236']
+            }]
+        }
+    });
+
+    new Chart(document.getElementById('interactionChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+            datasets: [{
+                data: [60,45,75,30,90,50,40],
+                backgroundColor: '#0077cc'
+            }]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true, max: 100 }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
