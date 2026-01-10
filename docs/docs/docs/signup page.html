@@ -8,15 +8,15 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            background: linear-gradient(to right, #ffd36a, #ffb38a);
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #1e293b;
         }
 
         /* ===== HEADER ===== */
         header {
-            background: rgba(0,0,0,0.25);
+            background: linear-gradient(to right, #6a7be6, #7d4ea3);
             color: white;
             padding: 30px 10px;
             text-align: center;
@@ -31,6 +31,7 @@
             font-size: 18px;
             margin-top: 10px;
             font-style: italic;
+            opacity: 0.9;
         }
 
         /* ===== MAIN CONTAINER ===== */
@@ -39,13 +40,13 @@
             margin: 40px auto;
             background: #ffffff;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
         }
 
         h2 {
             text-align: center;
-            color: #1e3c72;
+            color: #4f46e5;
             margin-bottom: 20px;
         }
 
@@ -59,8 +60,8 @@
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
         }
 
         input[type="radio"] {
@@ -79,18 +80,18 @@
 
         .btn {
             width: 100%;
-            background: #1e3c72;
+            background: #3b82f6;
             color: white;
             border: none;
             padding: 12px;
             margin-top: 20px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
         }
 
         .btn:hover {
-            background: #16305a;
+            background: #2563eb;
         }
 
         /* ===== QUOTES ===== */
@@ -98,21 +99,22 @@
             max-width: 900px;
             margin: 40px auto;
             text-align: center;
-            color: white;
+            color: #1e293b;
             padding: 20px;
         }
 
         .quote-box {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.85);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 14px;
             margin: 15px 0;
             font-size: 18px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: #0f1f3d;
+            background: #020617;
             color: white;
             text-align: center;
             padding: 15px;
@@ -120,7 +122,7 @@
         }
 
         footer a {
-            color: #ffdd57;
+            color: #60a5fa;
             text-decoration: none;
             font-weight: bold;
         }
@@ -130,52 +132,44 @@
 <body>
 
 <header>
-    <h1>Bright Future Academy</h1>
+    <h1> Scholars EduLearn</h1>
     <p>"Education is the most powerful weapon which you can use to change the world."</p>
 </header>
 
 <div class="container">
     <h2>Student Signup</h2>
 
-    <!-- FORM -->
+    <!-- FORM (UNCHANGED) -->
     <form onsubmit="goHome(event)">
 
         <label>Full Name</label>
-        <input type="text" placeholder="Enter your name" required>
+        <input type="text" id="name" placeholder="Enter your name" required>
 
         <label>Email</label>
-        <input type="email" placeholder="Enter your email" required>
+        <input type="email" id="email" placeholder="Enter your email" required>
 
         <label>Password</label>
-        <input type="password" placeholder="Enter password" required>
+        <input type="password" id="password" placeholder="Enter password" required>
 
         <label>Gender</label>
         <div class="gender">
-            <input type="radio" name="gender" required> Male
-            <input type="radio" name="gender"> Female
+            <input type="radio" name="gender" value="Male" required> Male
+            <input type="radio" name="gender" value="Female"> Female
         </div>
 
         <label>Age</label>
-        <select required>
+        <select id="age" required>
             <option value="">Select Age</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
+            <option>11</option><option>12</option><option>13</option>
+            <option>14</option><option>15</option><option>16</option>
+            <option>17</option><option>18</option>
         </select>
 
         <label>Class</label>
-        <select required>
+        <select id="class" required>
             <option value="">Select Class</option>
-            <option>8TH</option>
-            <option>9TH</option>
-            <option>10TH</option>
-            <option>11TH</option>
-            <option>12TH</option>
+            <option>8TH</option><option>9TH</option><option>10TH</option>
+            <option>11TH</option><option>12TH</option>
         </select>
 
         <label>Upload Photo</label>
@@ -192,14 +186,27 @@
 </div>
 
 <footer>
-    <p>Need help? <a href="contactus.html   ">Contact Us</a></p>
+    <p>Need help? <a href="contactus.html">Contact Us</a></p>
     <p>© 2026 Scholars@edulearn | Learn • Grow • Succeed</p>
 </footer>
 
-<!-- REDIRECT SCRIPT -->
+<!-- STORAGE SCRIPT (ADDED ONLY) -->
 <script>
     function goHome(event) {
-        event.preventDefault(); // stop form submission
+        event.preventDefault();
+
+        const user = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            age: document.getElementById("age").value,
+            class: document.getElementById("class").value,
+            gender: document.querySelector('input[name="gender"]:checked').value
+        };
+
+        localStorage.setItem("userData", JSON.stringify(user));
+
+        alert("Signup successful!");
         window.location.href = "home.html";
     }
 </script>
