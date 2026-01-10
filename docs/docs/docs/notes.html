@@ -7,17 +7,17 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
             margin: 0;
-            background-color: #f4f6f8;
+            background: linear-gradient(to bottom right, #ffd86f, #ffb07c);
             text-align: center;
         }
 
         /* Header */
         header {
-            background-color: #1a73e8;
+            background: linear-gradient(to right, #6a5acd, #7e57c2);
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
         }
 
         header h1 {
@@ -26,15 +26,15 @@
 
         /* Navigation */
         nav {
-            background-color: #ffffff;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff3e0;
+            padding: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         nav a {
-            margin: 0 15px;
+            margin: 0 18px;
             text-decoration: none;
-            color: #1a73e8;
+            color: #6a5acd;
             font-weight: bold;
         }
 
@@ -44,47 +44,51 @@
 
         /* Main Content */
         .container {
-            padding: 40px 20px;
-            max-width: 800px;
+            padding: 50px 20px;
+            max-width: 850px;
             margin: auto;
         }
 
         .card {
             background: white;
-            padding: 25px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 25px auto;
+            border-radius: 18px;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.18);
         }
 
         .card h2 {
             margin-top: 0;
+            color: #6a5acd;
         }
 
         .btn {
             display: inline-block;
-            background-color: #1a73e8;
+            background: linear-gradient(to right, #6a5acd, #7e57c2);
             color: white;
-            padding: 12px 25px;
+            padding: 14px 30px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 30px;
             font-size: 16px;
-            margin-top: 15px;
+            margin-top: 18px;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
 
         .btn:hover {
-            background-color: #155ab6;
+            opacity: 0.9;
         }
 
         /* Footer */
         footer {
-            background-color: #1a73e8;
+            background: linear-gradient(to right, #6a5acd, #7e57c2);
             color: white;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 18px;
+            margin-top: 40px;
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -103,21 +107,27 @@
 
     <div class="card">
         <h2>📂 Notes & Study Material</h2>
-        <p>All your class notes, study guides, and resources are stored in our shared Google Drive folder. Access them anytime, anywhere!</p>
-        <h1> GOOGLE DRIVE </h1>
-        <!-- Replace this link with your Google Drive shared folder link -->
-        <a class="btn" href="https://drive.google.com/drive/folders/1Nuswp8g5uCuP8RvLeMM5ytCMSN02f3v2?usp=drive_link" target="_blank">
+        <p>
+            All your class notes, study guides, and resources are stored in our shared
+            Google Drive folder. Access them anytime, anywhere!
+        </p>
+
+        <h1 style="color:#ff7043;">GOOGLE DRIVE</h1>
+
+        <a class="btn"
+           href="https://drive.google.com/drive/folders/1Nuswp8g5uCuP8RvLeMM5ytCMSN02f3v2?usp=drive_link"
+           target="_blank">
             View Notes
         </a>
 
-        <p style="margin-top:15px; font-size:14px; color:#555;">
+        <p style="margin-top:18px; font-size:14px; color:#555;">
             Tip: Use your school Gmail account to access restricted folders if needed.
         </p>
     </div>
 
     <div class="card">
         <h2>📝 How to Use</h2>
-        <ol style="text-align:left; max-width:500px; margin:auto;">
+        <ol style="text-align:left; max-width:520px; margin:auto;">
             <li>Click the "View Notes" button.</li>
             <li>Browse the folders by subject or date.</li>
             <li>Open any file to view online, or download it for offline study.</li>
