@@ -10,27 +10,32 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f6f8;
+    background: linear-gradient(to right, #ffd36a, #ffb38a);
     text-align: center;
+    color: #1e293b;
 }
 
 header {
-    background-color: #1a73e8;
+    background: linear-gradient(to right, #6a7be6, #7d4ea3);
     color: white;
-    padding: 20px;
+    padding: 25px;
 }
 
 nav {
-    background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #0f172a;
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #1a73e8;
+    color: #e0e7ff;
     font-weight: bold;
+}
+
+nav a:hover {
+    color: #60a5fa;
 }
 
 .container {
@@ -42,30 +47,30 @@ nav a {
 .card {
     background: white;
     padding: 25px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 25px auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
 .btn {
     display: inline-block;
-    background-color: #1a73e8;
+    background: #3b82f6;
     color: white;
     padding: 12px 25px;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 16px;
 }
 
 .btn:hover {
-    background-color: #155ab6;
+    background: #2563eb;
 }
 
 footer {
-    background-color: #1a73e8;
+    background: #020617;
     color: white;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 15px;
+    margin-top: 30px;
 }
 
 /* ===== BACK BUTTON ===== */
@@ -73,19 +78,18 @@ footer {
     position: fixed;
     top: 20px;
     left: 20px;
-    background-color: #ffffff;
-    color: #1a73e8;
-    padding: 8px 12px;
-    border-radius: 6px;
+    background: white;
+    color: #4f46e5;
+    padding: 8px 14px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: 1000;
-    transition: background-color 0.2s, color 0.2s;
 }
 
 #back-button:hover {
-    background-color: #1a73e8;
+    background: #4f46e5;
     color: white;
 }
 
@@ -103,16 +107,16 @@ footer {
 #chatbot-launcher span {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #2563eb;
+    color: #4f46e5;
 }
 
 #chatbot-launcher img {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    background: #2563eb;
+    background: #4f46e5;
     padding: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
 
 /* ===== CHATBOX ===== */
@@ -122,28 +126,28 @@ footer {
     right: 20px;
     width: 350px;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
     display: none;
     flex-direction: column;
 }
 
 #chat-header {
-    background: #2563eb;
+    background: linear-gradient(to right, #6a7be6, #7d4ea3);
     color: white;
-    padding: 12px;
+    padding: 14px;
     font-weight: bold;
 }
 
 #messages {
     height: 260px;
     overflow-y: auto;
-    padding: 10px;
+    padding: 12px;
     text-align: left;
 }
 
 .message {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 14px;
 }
 
@@ -169,7 +173,7 @@ footer {
 }
 
 #send-btn {
-    background: #2563eb;
+    background: #3b82f6;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -180,7 +184,6 @@ footer {
 
 <body>
 
-<!-- ===== BACK BUTTON ===== -->
 <a href="home.html" id="back-button">← Back</a>
 
 <header>
@@ -198,13 +201,13 @@ footer {
 
 <div class="container">
 
-    <div class="card" id="classroom">
+    <div class="card">
         <h2>🎓 Google Classroom</h2>
         <p>Access your assignments, notes, and announcements.</p>
         <a class="btn" href="https://classroom.google.com/u/0/h" target="_blank">Open Google Classroom</a>
     </div>
 
-    <div class="card" id="meet">
+    <div class="card">
         <h2>🎥 Google Meet</h2>
         <p>Join your live online classes.</p>
         <a class="btn" href="https://meet.google.com/landing" target="_blank">Join Google Meet</a>
@@ -240,13 +243,12 @@ footer {
     <p>© 2026 ScholarsEduLearn | Happy Learning 😊</p>
 </footer>
 
-<!-- ===== CHATBOT BUTTON WITH IMAGE AND TEXT ===== -->
+<!-- ===== CHATBOT ===== -->
 <div id="chatbot-launcher">
     <span>AI Chatbot</span>
-    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Robot">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png">
 </div>
 
-<!-- ===== CHATBOX ===== -->
 <div id="chatbox">
     <div id="chat-header">EduBot 📘</div>
     <div id="messages"></div>
@@ -257,7 +259,7 @@ footer {
 </div>
 
 <script>
-const API_KEY = "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"; // 🔐 Add your OpenAI API key
+const API_KEY = "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"; // ⚠️ DO NOT expose real keys publicly
 
 const launcher = document.getElementById("chatbot-launcher");
 const chatbox = document.getElementById("chatbox");
@@ -291,7 +293,7 @@ async function sendMessage() {
             body: JSON.stringify({
                 model: "gpt-4o-mini",
                 messages: [
-                    { role: "system", content: "You are an educational tutor. Explain clearly with examples." },
+                    { role: "system", content: "You are an educational tutor." },
                     { role: "user", content: msg }
                 ]
             })
@@ -308,6 +310,3 @@ document.getElementById("send-btn").onclick = sendMessage;
 
 </body>
 </html>
-
-
-
